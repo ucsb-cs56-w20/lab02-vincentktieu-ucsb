@@ -1,0 +1,16 @@
+<project>
+  <target name="javadoc"  description="generate javadoc">
+    <delete quiet="true">
+      <fileset dir="docs" includes="**/*" />      
+    </delete>
+    <mkdir dir="docs" />
+    <mkdir dir="docs/javadoc" />
+    <javadoc destdir="docs/javadoc">
+      <fileset dir="src" >
+	<include name="*.java"/>
+      </fileset>
+      <classpath refid="project.class.path" />
+      <link href="http://docs.oracle.com/javase/8/docs/api/" />          
+    </javadoc>
+  </target>
+</project>
